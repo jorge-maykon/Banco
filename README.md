@@ -1,2 +1,2 @@
-# Banco-JAVA
+# Banco
 Este é meu primeiro aplicativo JAVA.
