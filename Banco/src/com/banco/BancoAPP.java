@@ -1,13 +1,13 @@
 package com.banco;
-import java.awt.JobAttributes;
 import java.util.Random;
 
-import javax.print.attribute.standard.JobOriginatingUserName;
 import javax.swing.JOptionPane;
 
-
-public class BancoAPP extends ContaPF  {
-  public static void main(String[] args) {
+	public class BancoAPP extends ContaPF  {
+		public BancoAPP(int numAg, int numConta, double saldo) {
+			super(1, 2, 0.00);
+		}
+	public static void main(String[] args) {
     
 	Object[] opcoes = 	{"Conta PF", "Conta PJ", "Sair"};
     Object opcao;
@@ -26,7 +26,7 @@ public class BancoAPP extends ContaPF  {
 //input data in pessoa fisica   
     if(opcao == "Conta PF") {
 //instance class ContaPF
-    	ContaPF cc = new ContaPF();
+    	ContaPF cc = new ContaPF(0,0,0.0);
     	
     	cc.setNumAG(10);
     	cc.setNumConta(G.nextInt(10));
@@ -61,14 +61,15 @@ public class BancoAPP extends ContaPF  {
 	   do { oppf = JOptionPane.showInputDialog(null, "Selecione a operação", "Operações", JOptionPane.PLAIN_MESSAGE, null, opspf, opspf[0]);
 	   
 //add references of other class
-	    usuario.n = userF;
+		   //UserF = usuario.setNome();
+		   //usuario.n = userF;
 	    
 	    if (oppf == "Consultar Dados") {
-	    	JOptionPane.showMessageDialog(null, "CPF: " + usuario.n.getCpf()+ "\nRg: " +usuario.n.getRg()+ "\nCArgo: "+ usuario.n.getCargo()+"\nSalario: "+ usuario.n.getSalario());
+	    	JOptionPane.showMessageDialog(null, "CPF: " + usuario.getNome());
 	    }
-	    else if (oppf == "Consultar Saldo") {
-	    	JOptionPane.showMessageDialog(null, "Saldo: "+ usuario.n.getSalario());
-	    }
+	    //else if (oppf == "Consultar Saldo") {
+	    //	JOptionPane.showMessageDialog(null, "Saldo: "+ usuario.getSalario());
+	    //}
 	    } while (oppf != "Sair");
     }
 

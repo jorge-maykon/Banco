@@ -1,7 +1,6 @@
 package com.banco;
 
 public class Conta {
-
 //atributos
 	private int numAG;
 	private int numConta;

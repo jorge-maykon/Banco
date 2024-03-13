@@ -5,7 +5,7 @@ public class ContaPF extends Conta{
 
 	public ContaPF(int numAg, int numConta, double saldo){
 
-		super(int numAg, int numConta; 2double saldo);
+		super(numAg, numConta, saldo);
 		// TODO Auto-generated constructor stub
 	}
 	public PessoaFisica getTitularConta() {

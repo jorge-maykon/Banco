@@ -2,18 +2,16 @@ package com.banco;
 
 public class PessoaFisica extends Pessoa {
 
-//atributos
+	private static final int idPessoa = 01;
+	//atributos
 	private String cpf;
 	private String rg;
 	private Object cargo;
 	private double salario; 
 	
-	public PessoaFisica(int idPessoa,String nome, String Email, PessoaFisica n, PessoaJuridica m, String cpf,String rg, Object cargo, double salario) {
-		super(idPessoa, nome, Email, n, m);
-		
-		
-		
-		// TODO Auto-generated constructor stub
+	public PessoaFisica(){
+		super(idPessoa);
+        /* TODO Auto-generated constructor stub */
 	}
 
 	public String getCpf() {
