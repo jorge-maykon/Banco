@@ -71,13 +71,7 @@ public class BancoAPP extends ContaPF  {
 	    }
 	    } while (oppf != "Sair");
     }
-    	
-    
-    
-    
-    
-    
-    
+
     
 //Caso a conta seja de pessoa juridica 
     else if (opcao == "Conta PJ") {
