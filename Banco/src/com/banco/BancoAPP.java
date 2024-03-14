@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 			super(1, 2, 0.00);
 		}
 	public static void main(String[] args) {
-    
+
 	Object[] opcoes = 	{"Conta PF", "Conta PJ", "Sair"};
     Object opcao;
     Object[] cargos = 	{"Gerente", "Coordenador", "Analista", "Programador"};
