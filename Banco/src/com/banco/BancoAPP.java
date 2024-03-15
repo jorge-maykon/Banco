@@ -1,5 +1,6 @@
 package com.banco;
 import java.util.Random;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
@@ -8,6 +9,20 @@ import javax.swing.JOptionPane;
 			super(1, 2, 0.00);
 		}
 	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		int opcao;
+
+		System.out.println("--- Menu ---");
+		String[] menu = {"1-Login", "2-Novo user", "3-Sair"};
+
+		for (String resp: menu){
+			System.out.println(resp);
+		}
+
+		System.out.print("insira numero correspondente: ");
+		opcao = scanner.nextInt();
+		System.out.println("A opcao selecionada foi: "+ menu[opcao - 1]);
 
 	Object[] opcoes = 	{"Conta PF", "Conta PJ", "Sair"};
     Object opcao;
