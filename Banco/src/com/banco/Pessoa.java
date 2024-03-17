@@ -1,6 +1,6 @@
 package com.banco;
 
-public class Pessoa {
+ class Pessoa {
 	private int idPessoa;
 	private String nome;
 	private String Email;

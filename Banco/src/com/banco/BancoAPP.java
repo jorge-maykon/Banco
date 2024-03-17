@@ -1,31 +1,18 @@
 package com.banco;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.*;
 
-import javax.swing.JOptionPane;
-
-	public class BancoAPP extends ContaPF  {
+public class BancoAPP extends ContaPF  {
 		public BancoAPP(int numAg, int numConta, double saldo) {
 			super(1, 2, 0.00);
 		}
 	public static void main(String[] args) {
 
-		Scanner scanner = new Scanner(System.in);
-		int opcao;
-
-		System.out.println("--- Menu ---");
-		String[] menu = {"1-Login", "2-Novo user", "3-Sair"};
-
-		for (String resp: menu){
-			System.out.println(resp);
-		}
-
-		System.out.print("insira numero correspondente: ");
-		opcao = scanner.nextInt();
-		System.out.println("A opcao selecionada foi: "+ menu[opcao - 1]);
-
+	Object[] menu = {"Login", "Novo Usuario", "sair"};
 	Object[] opcoes = 	{"Conta PF", "Conta PJ", "Sair"};
-    Object opcao;
+    Object  opcao;
+
     Object[] cargos = 	{"Gerente", "Coordenador", "Analista", "Programador"};
     Object[] empresas = {"Alimenticio", "Transporte"};
     Object empresa; 
@@ -34,12 +21,44 @@ import javax.swing.JOptionPane;
     
 //all instances
     Random G = new Random();
+	Pessoa User = new Pessoa(01);
     
 //menu initial
-    opcao = JOptionPane.showInputDialog(null, "Selecione o tipo de conta :", "tipo: ", JOptionPane.PLAIN_MESSAGE, null,opcoes, opcoes[0]);
-    
-//input data in pessoa fisica   
-    if(opcao == "Conta PF") {
+	/*	for (String resp: menu){
+			System.out.println(resp);
+		}
+
+		System.out.print("insira numero correspondente: ");
+		opcao = scanner.nextInt();
+		System.out.println("A opcao selecionada foi: "+ menu[opcao - 1]);*/
+
+		SwingUtilities.invokeLater(() -> {
+			Form Tela = new Form();
+			Tela.setVisible(true);
+		});
+
+		opcao = JOptionPane.showInputDialog(null, "--- Menu --- :", "tipo: ", JOptionPane.PLAIN_MESSAGE, null,menu, menu[0]);
+
+		System.out.println(opcao);
+		 /*switch (opcao) {
+			 case "Login":
+				 User.setNome(JOptionPane.showInputDialog("Digite seu nome: "));
+			break;
+			 case "Novo Usuario":
+				 JOptionPane.showInputDialog(null, "Digite seu nome: ", "tipo: ", JOptionPane.PLAIN_MESSAGE, null,opcoes, opcoes[0]);
+		 	break;
+			 case "Sair":
+				 //JOptionPane.show();
+			 break;
+		 }
+
+		 opcao = JOptionPane.showInputDialog(null, "Selecione o tipo de conta :", "tipo: ", JOptionPane.PLAIN_MESSAGE, null,opcoes, opcoes[0]);
+    */
+//input data in pessoa fisica
+
+
+
+	if(opcao == "Conta PF") {
 //instance class ContaPF
     	ContaPF cc = new ContaPF(0,0,0.0);
     	
