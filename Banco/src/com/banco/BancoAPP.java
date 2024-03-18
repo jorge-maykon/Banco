@@ -1,7 +1,9 @@
 package com.banco;
+import java.awt.font.TextLayout;
 import java.util.Random;
 import java.util.Scanner;
 import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class BancoAPP extends ContaPF  {
 		public BancoAPP(int numAg, int numConta, double saldo) {
@@ -22,24 +24,67 @@ public class BancoAPP extends ContaPF  {
 //all instances
     Random G = new Random();
 	Pessoa User = new Pessoa(01);
-    
+	Form Tela = new Form();
 //menu initial
-	/*	for (String resp: menu){
-			System.out.println(resp);
-		}
+		  opcao = JOptionPane.showOptionDialog(null,
+			"Escolha uma opção",
+			"SeuBank",
+			JOptionPane.YES_NO_CANCEL_OPTION,
+			JOptionPane.QUESTION_MESSAGE,
+			null,
+			menu,
+			menu[0]);
 
-		System.out.print("insira numero correspondente: ");
-		opcao = scanner.nextInt();
-		System.out.println("A opcao selecionada foi: "+ menu[opcao - 1]);*/
+		  int opca = Integer.parseInt(opcao.toString());
 
-		SwingUtilities.invokeLater(() -> {
-			Form Tela = new Form();
-			Tela.setVisible(true);
-		});
+		  switch (opca){
+			  case 0:
+				SwingUtilities.invokeLater(() -> {
+					Tela.setVisible(true);
+					Tela.getJMenuBar();
+					Tela.setSize(750, 600);
+					Tela.setLocationRelativeTo(null);
+					Tela.setTitle("My Bank");
+					JLabel mensagem = new JLabel("Bem vindo, a tela de Login:");
+					Tela.getContentPane().add(mensagem);
+					Tela.pack();
+				});
+				  break;
 
-		opcao = JOptionPane.showInputDialog(null, "--- Menu --- :", "tipo: ", JOptionPane.PLAIN_MESSAGE, null,menu, menu[0]);
 
-		System.out.println(opcao);
+			case 1:
+				SwingUtilities.invokeLater(() -> {
+					Tela.setVisible(true);
+					Tela.getJMenuBar();
+					Tela.setSize(750, 600);
+					Tela.setLocationRelativeTo(null);
+					Tela.setTitle("My Bank");
+					JLabel mensagem = new JLabel("Bem vindo, a tela de Novo usuario:");
+					Tela.getContentPane().add(mensagem);
+					Tela.pack();
+				});
+				break;
+
+		  }
+	}
+}
+
+
+
+
+			/*Tela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			Tela.add(inicializar); // adiciona o painel ao frame ÿ
+			Tela.setSize(250, 250); // configura o tamanho do frameÿ
+			Tela.setVisible(true); // torna o frame visível*/
+
+					/*opcao = JOptionPane.showInputDialog
+					(null, "--- Menu --- :", "tipo: ",
+							JOptionPane.PLAIN_MESSAGE, null,menu, menu[0]));
+		});*/
+
+
+
+		//System.out.println(opcao);
 		 /*switch (opcao) {
 			 case "Login":
 				 User.setNome(JOptionPane.showInputDialog("Digite seu nome: "));
@@ -58,7 +103,7 @@ public class BancoAPP extends ContaPF  {
 
 
 
-	if(opcao == "Conta PF") {
+	/*if(opcao == "Conta PF") {
 //instance class ContaPF
     	ContaPF cc = new ContaPF(0,0,0.0);
     	
@@ -118,6 +163,7 @@ public class BancoAPP extends ContaPF  {
     		user.setSite(JOptionPane.showInputDialog(null, "Informe seu site :"));
     		
     	} 
-   } 
-}
+
+		*/
+
 
